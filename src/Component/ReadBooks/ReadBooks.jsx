@@ -16,8 +16,6 @@ const ReadBooks = () => {
             const readBook = books.filter(book => storedBookIds.includes(book.id))
 
             setBookRead(readBook);
-
-            console.log(books, storedBookIds, readBook);
         }
     }, [])
 

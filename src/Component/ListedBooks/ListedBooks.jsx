@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
@@ -7,7 +6,6 @@ const ListedBooks = () => {
 
     return (
         <div className="mt-16">
-            <h2>Listed books:</h2>
             <div className="bg-[#f4f4f4]">
                 <h1 className="text-3xl font-bold text-center pt-6 pb-6">Books</h1>
             </div>
