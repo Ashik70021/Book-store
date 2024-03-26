@@ -10,12 +10,16 @@ import {
 import Home from './Component/Home/Home';
 import Root from './Component/Root/Root';
 import BookDetails from './Component/BookDetails/BookDetails';
-
+import ErrorPage from './Component/ErrorPage/ErrorPage';
+import ListedBooks from './Component/ListedBooks/ListedBooks';
+import ReadBooks from './Component/ReadBooks/ReadBooks';
+import WishList from './Component/WishList/WishList';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -25,6 +29,21 @@ const router = createBrowserRouter([
         path: '/bookdetails/:id',
         element: <BookDetails></BookDetails>,
         loader: () => fetch('../books.json')
+      },
+      {
+        path: '/listedbooks',
+        element: <ListedBooks></ListedBooks>,
+        children: [
+          {
+            index: true,
+            element: <ReadBooks></ReadBooks>,
+            loader: () => fetch('../books.json'),
+          },
+          {
+            path:'wishlist',
+            element:<WishList></WishList>
+          }
+        ],
       }
     ]
   },
