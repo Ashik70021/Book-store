@@ -3,12 +3,12 @@ import { CiStar } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
-    const { img, tags, book_name, author, category, rating } = book;
+    const {id, img, tags, book_name, author, category, rating } = book;
     return (
-        <Link to=''>
-            <div className="card w-96 bg-base-100 shadow-xl">
+        <Link to={`/bookdetails/${id}`}>
+            <div className=" bg-base-100 shadow-xl">
                 <div className="p-6">
-                    <img src={img} alt="Shoes" className="rounded-xl"/>
+                    <img src={img} alt="Shoes" className="rounded-xl w-full"/>
                 </div>
                 <div className="card-body text-center">
                     <div className="flex">
