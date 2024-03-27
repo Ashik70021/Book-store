@@ -37,7 +37,7 @@ const WishList = () => {
                                                 <p className="card-title text-[#131313cc] font-medium text-xl mb-4">By: {readboook.author}</p>
                                             </div>
 
-                                            <div className="flex gap-4">
+                                            <div className="md:flex gap-4">
                                                 <div className="flex mt-6 mb-4">
                                                     <p className="font-semibold text-xl text-[#131313] mr-2">Tag: </p>
                                                     <h1 className=" pl-2 pr-2 pb-1 pt-1 bg-[#e8ffe5] text-[#23BE0A] rounded-3xl text-xl font-semibold mr-6">{readboook.tags[0]}</h1>
@@ -51,7 +51,7 @@ const WishList = () => {
 
 
 
-                                            <div className="flex gap-6 align-middle mb-3">
+                                            <div className="md:flex gap-6 align-middle mb-3">
                                                 <div className="flex gap-4 text-[#303030cc] font-medium text-lg align-middle">
                                                     <GoPeople />
                                                     <p>Publisher: <span>{readboook.publisher}</span> </p>

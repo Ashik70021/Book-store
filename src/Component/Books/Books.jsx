@@ -10,7 +10,7 @@ const Books = () => {
     })
     return (
         <div>
-            <h2 className="font-bold text-3xl text-center ml-6">Books: {books.length}</h2>
+            <h2 className="font-bold text-3xl text-center ml-6">Books</h2>
             <div className="md:grid md:grid-cols-3 gap-8 mt-16">
                 {
                     books.map(book => <Book 
