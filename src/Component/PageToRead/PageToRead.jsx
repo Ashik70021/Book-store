@@ -1,4 +1,4 @@
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { getStoredReadBook } from '../Utility/localstorage';
@@ -34,9 +34,9 @@ const PageToRead = () => {
       };
       
     return (
-        <div>
+        <div className='mt-16'>
             <BarChart
-                width={700}
+                width={1100}
                 height={600}
                 data={bookRead}
                 margin={{
@@ -55,7 +55,7 @@ const PageToRead = () => {
                     ))}
                 </Bar>
             </BarChart>
-
+            <ResponsiveContainer height={400}></ResponsiveContainer>
         </div>
     );
 };

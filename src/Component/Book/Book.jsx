@@ -3,15 +3,14 @@ import { CiStar } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
-    const {id, img, tags, book_name, author, category, rating } = book;
+    const { id, img, tags, book_name, author, category, rating } = book;
     return (
         <Link to={`/bookdetails/${id}`}>
-            <div className=" bg-base-100 shadow-xl">
-                <div className="p-6">
-                    <img src={img} alt="Shoes" className="rounded-xl w-full"/>
-                </div>
+            {/* ///////////////////////////////////////// */}
+            <div className="max-auto p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
+                <img src={img} alt="" className=" mx-auto object-cover object-center w-64 rounded-md h-72 dark:bg-gray-500" />
                 <div className="card-body text-center">
-                    <div className="flex">
+                    <div className="flex justify-start">
                         <h1 className=" pl-2 pr-2 pb-1 pt-1 bg-[#e8ffe5] text-[#23BE0A] rounded-3xl text-xl font-semibold mr-6">{tags[0]}</h1>
                         <h1 className=" pl-2 pr-2 pb-1 pt-1 bg-[#e8ffe5] text-[#23BE0A] rounded-3xl text-xl font-semibold mr-6">{tags[1]}</h1>
                     </div>

@@ -4,15 +4,15 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
 
     const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/listedbooks">Listed Books</NavLink></li>
-        <li><NavLink to="/pagetoread">Pages to Read</NavLink></li>
-        <li><NavLink to="/orderbook">Order Book</NavLink></li>
-        <li><NavLink to="/contact">Contact</NavLink></li>
+        <li className="text-xl"><NavLink to="/">Home</NavLink></li>
+        <li className="text-xl"><NavLink to="/listedbooks">Listed Books</NavLink></li>
+        <li className="text-xl"><NavLink to="/pagetoread">Pages to Read</NavLink></li>
+        <li className="text-xl"><NavLink to="/orderbook">Order Book</NavLink></li>
+        <li className="text-xl"><NavLink to="/contact">Contact</NavLink></li>
     </>
 
     return (
-        <div className="navbar ">
+        <div className="navbar mt-6 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div role="button" className="btn btn-ghost lg:hidden">
@@ -22,7 +22,7 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="text-xl">Book Vibe</a>
+                <a className="text-2xl">Book Vibe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
