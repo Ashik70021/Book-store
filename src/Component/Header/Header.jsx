@@ -7,10 +7,12 @@ const Header = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/listedbooks">Listed Books</NavLink></li>
         <li><NavLink to="/pagetoread">Pages to Read</NavLink></li>
+        <li><NavLink to="/orderbook">Order Book</NavLink></li>
+        <li><NavLink to="/contact">Contact</NavLink></li>
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div role="button" className="btn btn-ghost lg:hidden">
@@ -20,7 +22,7 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Book Vibe</a>
+                <a className="text-xl">Book Vibe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
