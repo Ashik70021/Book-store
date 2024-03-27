@@ -1,6 +1,6 @@
 # Book Vibe
 
-[Live Site link:](https://books-vibe-react.netlify.app/)
+[Live Site](https://books-vibe-react.netlify.app/)
 
 ## Features and Characteristics:
 
