@@ -17,8 +17,6 @@ const BookDetails = () => {
     }
     const handleToast = (book) => {
         const storedBookIds = getStoredReadBook();
-        console.log(storedBookIds)
-        console.log(book)
         const isexists = storedBookIds.includes(book);
         console.log(isexists)
         if (isexists) {
@@ -30,7 +28,14 @@ const BookDetails = () => {
 
     const handleWish = (book) => {
         handleWishToast(book);
-        saveWishList(id);
+        const storedBookIds = getStoredReadBook();
+        const isexists = storedBookIds.includes(book);
+        console.log(isexists)
+        if (!isexists) {
+            saveWishList(id);
+        }else{
+            return
+        }
     }
     const handleWishToast = (book) =>{
         const storeids = getStoredWishList();
