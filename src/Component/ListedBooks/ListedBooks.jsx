@@ -10,6 +10,15 @@ const ListedBooks = () => {
                 <h1 className="text-3xl font-bold text-center pt-6 pb-6">Books</h1>
             </div>
 
+            <div className="pl-[47%] dropdown dropdown-hover mt-4">
+                <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] text-white">Short By</div>
+                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Rating</a></li>
+                    <li><a>Number of pages</a></li>
+                    <li><a>Published year</a></li>
+                </ul>
+            </div>
+
             <div className="mx-auto mt-6 flex items-start overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">
                 <Link
                     to=''
