@@ -20,9 +20,9 @@ const BookDetails = () => {
         const isexists = storedBookIds.includes(book);
         console.log(isexists)
         if (isexists) {
-            toast.warn("already selected");
+            toast.warn("Already Added to Read List");
         }else{
-            toast("Book Added to Wish List")
+            toast("Book Added to Read List")
         }
     }
 
@@ -43,7 +43,7 @@ const BookDetails = () => {
         const isexistsread = storedBookIds.includes(book);
         const isexists = storeids.includes(book);
         if (isexists || isexistsread) {
-            toast.warn("already selected");
+            toast.warn("Already added to Wish List");
         }else{
             toast("Book Added to Wish List")
         }
