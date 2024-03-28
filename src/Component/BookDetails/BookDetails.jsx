@@ -1,23 +1,47 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { saveReadBook, saveWishList } from "../Utility/localstorage";
+import { getStoredReadBook, getStoredWishList, saveReadBook, saveWishList } from "../Utility/localstorage";
 
 
 const BookDetails = () => {
     const books = useLoaderData();
     const { id } = useParams();
-    // const idInt = parseInt(id);
     const book = books.find(book => book.id === id)
     console.log(book, id)
 
     const handleRead = (book) => {
-            saveReadBook(id);
-            toast("Book Added to Read List")
+        handleToast(book);
+        saveReadBook(id);
+        
     }
-    const handleWish = (book) =>{
-            saveWishList(id);
+    const handleToast = (book) => {
+        const storedBookIds = getStoredReadBook();
+        console.log(storedBookIds)
+        console.log(book)
+        const isexists = storedBookIds.includes(book);
+        console.log(isexists)
+        if (isexists) {
+            toast.warn("already selected");
+        }else{
             toast("Book Added to Wish List")
+        }
+    }
+
+    const handleWish = (book) => {
+        handleWishToast(book);
+        saveWishList(id);
+    }
+    const handleWishToast = (book) =>{
+        const storeids = getStoredWishList();
+        const storedBookIds = getStoredReadBook();
+        const isexistsread = storedBookIds.includes(book);
+        const isexists = storeids.includes(book);
+        if (isexists || isexistsread) {
+            toast.warn("already selected");
+        }else{
+            toast("Book Added to Wish List")
+        }
     }
     return (
         <div className="md:grid grid-cols-2 mt-16">
@@ -58,8 +82,8 @@ const BookDetails = () => {
                     </div>
                 </div>
                 <div className="mt-6">
-                    <button onClick={() => { handleRead(book) }} className="border text-xl pl-4 pr-4 pt-2 pb-2 rounded-2xl font-bold text-[#131313] mr-4">Read</button>
-                    <button onClick={() => { handleWish(book) }} className="border text-xl pl-4 pr-4 pt-2 pb-2 rounded-2xl font-bold bg-[#50B1C9] text-white">Wishlist</button>
+                    <button onClick={() => { handleRead(book.id) }} className="border text-xl pl-4 pr-4 pt-2 pb-2 rounded-2xl font-bold text-[#131313] mr-4">Read</button>
+                    <button onClick={() => { handleWish(book.id) }} className="border text-xl pl-4 pr-4 pt-2 pb-2 rounded-2xl font-bold bg-[#50B1C9] text-white">Wishlist</button>
                 </div>
 
             </div>
